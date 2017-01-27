@@ -35,35 +35,18 @@ public class Main {
 
         // Convert from Java object to JSON
         String bsJSON = gson.toJson(bsModel, BattleshipModel.class);
-        
+
         return bsJSON;
     }
 
     //This function should accept an HTTP request and deseralize it into an actual Java object.
     private static BattleshipModel getModelFromReq(Request req){
-        Gson gson = new Gson();
-        BattleshipModel battleshipModel = gson.fromJson(req.body(), BattleshipModel.class);
-        return battleshipModel;
+        return null;
     }
 
     //This controller should take a json object from the front end, and place the ship as requested, and then return the object.
     private static String placeShip(Request req) {
-        /*
-        ** Get Parameters
-        */
-        BattleshipModel battleshipModel = getModelFromReq(req);
-        String shipId = req.params(":id");
-        int row = Integer.parseInt(req.params(":row"));
-        int col = Integer.parseInt(req.params(":col"));
-        String orientation = req.params(":orientation");
-
-
-        /*
-        ** Reserialize
-        */
-        Gson gson = new Gson();
-
-        return gson.toJson(battleshipModel);
+        return null;
     }
 
     //Similar to placeShip, but with firing.
