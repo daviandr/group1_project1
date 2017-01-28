@@ -4,7 +4,7 @@ var gameModel;
 $( document ).ready(function() {
 
   $.getJSON("model", function( json ) {
-    displayGameState(currModel);
+    displayGameState(json);
     gameModel = json;
    });
 });
@@ -56,8 +56,8 @@ function fire(){
 
 //This function will display the game model.  It displays the ships on the users board, and then shows where there have been hits and misses on both boards.
 function displayGameState(gameModel){
-$( '#MyBoard td'  ).css("background-color", "blue");
-$( '#TheirBoard td'  ).css("background-color", "blue");
+$( '#MyBoard td'  ).css("background-color", "LightBlue");
+$( '#TheirBoard td'  ).css("background-color", "LightBlue");
 
 displayShip(gameModel.aircraftCarrier);
 displayShip(gameModel.battleship);

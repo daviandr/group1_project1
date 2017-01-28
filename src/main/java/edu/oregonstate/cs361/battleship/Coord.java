@@ -1,7 +1,7 @@
 /*
 ** Filename: Coord.java
 ** Project: Battleship
-** By: Daniel Kato
+** By: Group 1
 */
 package edu.oregonstate.cs361.battleship;
 

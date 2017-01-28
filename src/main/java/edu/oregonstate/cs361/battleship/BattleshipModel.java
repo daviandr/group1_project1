@@ -1,7 +1,7 @@
 /*
 ** Filename: BattleshipModel.java
 ** Project: Battleship
-** By: Daniel Kato
+** By: Group 1
 */
 package edu.oregonstate.cs361.battleship;
 
@@ -21,7 +21,6 @@ public class BattleshipModel {
     public Coord[] playerMisses;
     public Coord[] computerHits;
     public Coord[] computerMisses;
-
 
     /*
     ** Function Name: BattleshipModel (constructor)

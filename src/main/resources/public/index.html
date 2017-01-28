@@ -11,8 +11,12 @@
 <script src="/js/app.js"></script>
 
 <body class="container">
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Battleship</h1>
+        </div>
 
-<h1>Place Ships</h1>
+<h2>Place Ships</h2>
 <div id="ShipPlacement">
     Ship:
     <select name="shipSelec" id="shipSelec">
@@ -62,7 +66,7 @@
 
     <section id="todoapp" ic-target="this">
         <!--#parse("/velocity/todoList.vm")-->
-        <h1>Yours</h1>
+        <h2>Yours</h2>
         <div id="MyBoard" class="gameBoard">
             <table>
                 <tr id="Row_1">
@@ -191,7 +195,7 @@
     </div>
 
     <div class= "col-md-6">
-    <H1>Theirs</H1>
+    <H2>Theirs</H2>
     <div id="TheirBoard" class="gameBoard">
         <table>
             <tr id="Row_1">
@@ -350,9 +354,13 @@
         <span>&nbsp</span>
         <button class="btn btn-default btn-xs" type="button" onclick="fire()">Fire</button>
     </div>
+    </div>
 
 </section>
 </body>
+<footer>
+    <br><br><br><br>
+</footer>
 <script>
    $('#TheirBoard td').click(function(event) {
    console.log("CLICK EVENT");

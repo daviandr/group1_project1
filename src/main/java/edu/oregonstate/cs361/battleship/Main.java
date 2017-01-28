@@ -1,7 +1,7 @@
 /*
 ** Filename: Main.java
 ** Project: Battleship
-** By: Daniel Kato
+** By: Group 1
 */
 package edu.oregonstate.cs361.battleship;
 
@@ -30,13 +30,7 @@ public class Main {
 
     //This function should return a new model
     private static String newModel() {
-        BattleshipModel bsModel = new BattleshipModel();
-        Gson gson = new Gson();
-
-        // Convert from Java object to JSON
-        String bsJSON = gson.toJson(bsModel, BattleshipModel.class);
-
-        return bsJSON;
+        return null;
     }
 
     //This function should accept an HTTP request and deseralize it into an actual Java object.
