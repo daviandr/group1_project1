@@ -4,7 +4,7 @@ var gameModel;
 $( document ).ready(function() {
 
   $.getJSON("model", function( json ) {
-    displayGameState(json);
+    displayGameState(currModel);
     gameModel = json;
    });
 });
