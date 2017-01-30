@@ -40,6 +40,18 @@ public class Main {
 
     //This controller should take a json object from the front end, and place the ship as requested, and then return the object.
     private static String placeShip(Request req) {
+
+        //get coordinates from Json object
+        //convert coordinates to integers
+        //check coordinates in board (while loop)
+            //if coordinates are out of range, reject placement
+            //if coordinates are occupied, reject placement
+            //else, accept board placement
+        //add ship to board
+            //don't forget to include the entire ship. Change all the occupied boxes
+        //change colors of board to display ship
+        //return changes to board
+
         return null;
     }
 
