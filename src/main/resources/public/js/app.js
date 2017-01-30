@@ -4,10 +4,8 @@ var gameModel;
 $( document ).ready(function() {
 
   $.getJSON("model", function( json ) {
-      alert(JSON.stringify(json));
     displayGameState(json);
     gameModel = json;
-    alert(JSON.stringify(gameModel));
    });
 });
 
@@ -84,9 +82,6 @@ for (var i = 0; i < gameModel.playerMisses.length; i++) {
 for (var i = 0; i < gameModel.playerHits.length; i++) {
    $( '#MyBoard #' + gameModel.playerHits[i].Across + '_' + gameModel.playerHits[i].Down ).css("background-color", "#DBA2CD");
 }
-
-
-
 }
 
 
