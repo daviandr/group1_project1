@@ -40,12 +40,36 @@ public class Main {
 
     //This controller should take a json object from the front end, and place the ship as requested, and then return the object.
     private static String placeShip(Request req) {
+
+        //get coordinates from Json object
+        //convert coordinates to integers
+        //check coordinates in board (while loop)
+            //if coordinates are out of range, reject placement
+            //if coordinates are occupied, reject placement
+            //else, accept board placement
+        //add ship to board
+            //don't forget to include the entire ship. Change all the occupied boxes
+        //change colors of board to display ship
+        //return changes to board
+
         return null;
     }
 
     //Similar to placeShip, but with firing.
     private static String fireAt(Request req) {
+        //PSUEDO-CODE
+
+        /*
+        Take user inputted coordinates they will be firing at
+        Compare it against positions of each ship - five ships so five comparisons
+        If hit lands on position of ship, return message saying they got a hit
+            send update to newModel to update the game board, showing damaged ship
+        else the hit lands in the water, return message saying they missed
+            send update to newModel to update board, showing missed spot
+        
+         */
         return null;
     }
 
 }
+//comment
