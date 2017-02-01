@@ -13,7 +13,7 @@ background-color: light-gray;
 .gameBoard td {
 width: 40px;
 height:40px;
-background-color:blue;
+background-color:LightBlue;
 }
 
 table, th, td {

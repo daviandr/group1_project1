@@ -4,7 +4,7 @@ var gameModel;
 $( document ).ready(function() {
 
   $.getJSON("model", function( json ) {
-    displayGameState(currModel);
+    displayGameState(json);
     gameModel = json;
    });
 });
@@ -23,7 +23,6 @@ function placeShip() {
    request.done(function( currModel ) {
      displayGameState(currModel);
      gameModel = currModel;
-
    });
 
    // if there is a problem, and the back end does not respond, then an alert will be shown.
@@ -56,31 +55,33 @@ function fire(){
 
 //This function will display the game model.  It displays the ships on the users board, and then shows where there have been hits and misses on both boards.
 function displayGameState(gameModel){
-$( '#MyBoard td'  ).css("background-color", "blue");
-$( '#TheirBoard td'  ).css("background-color", "blue");
+$( '#MyBoard td'  ).css("background-color", "LightBlue");
+$( '#TheirBoard td'  ).css("background-color", "LightBlue");
 
 displayShip(gameModel.aircraftCarrier);
 displayShip(gameModel.battleship);
 displayShip(gameModel.cruiser);
 displayShip(gameModel.destroyer);
 displayShip(gameModel.submarine);
+displayEnemyShip(gameModel.computer_aircraftCarrier);
+displayEnemyShip(gameModel.computer_battleship);
+displayEnemyShip(gameModel.computer_cruiser);
+displayEnemyShip(gameModel.computer_destroyer);
+displayEnemyShip(gameModel.computer_submarine);
 
 for (var i = 0; i < gameModel.computerMisses.length; i++) {
-   $( '#TheirBoard #' + gameModel.computerMisses[i].Across + '_' + gameModel.computerMisses[i].Down ).css("background-color", "green");
+   $( '#TheirBoard #' + gameModel.computerMisses[i].Across + '_' + gameModel.computerMisses[i].Down ).css("background-color", "#CDDBA2");
 }
 for (var i = 0; i < gameModel.computerHits.length; i++) {
-   $( '#TheirBoard #' + gameModel.computerHits[i].Across + '_' + gameModel.computerHits[i].Down ).css("background-color", "red");
+   $( '#TheirBoard #' + gameModel.computerHits[i].Across + '_' + gameModel.computerHits[i].Down ).css("background-color", "#DBA2CD");
 }
 
 for (var i = 0; i < gameModel.playerMisses.length; i++) {
-   $( '#MyBoard #' + gameModel.playerMisses[i].Across + '_' + gameModel.playerMisses[i].Down ).css("background-color", "green");
+   $( '#MyBoard #' + gameModel.playerMisses[i].Across + '_' + gameModel.playerMisses[i].Down ).css("background-color", "#CDDBA2");
 }
 for (var i = 0; i < gameModel.playerHits.length; i++) {
-   $( '#MyBoard #' + gameModel.playerHits[i].Across + '_' + gameModel.playerHits[i].Down ).css("background-color", "red");
+   $( '#MyBoard #' + gameModel.playerHits[i].Across + '_' + gameModel.playerHits[i].Down ).css("background-color", "#DBA2CD");
 }
-
-
-
 }
 
 
@@ -98,6 +99,25 @@ function displayShip(ship){
     } else {
         for (i = startCoordAcross; i <= endCoordAcross; i++) {
             $( '#MyBoard #'+i+'_'+startCoordDown  ).css("background-color", "yellow");
+        }
+    }
+ }
+}
+
+//This function will barely display an Enemy ship given a ship object in JSON
+function displayEnemyShip(ship){
+ startCoordAcross = ship.start.Across;
+ startCoordDown = ship.start.Down;
+ endCoordAcross = ship.end.Across;
+ endCoordDown = ship.end.Down;
+ if(startCoordAcross > 0){
+    if(startCoordAcross == endCoordAcross){
+        for (i = startCoordDown; i <= endCoordDown; i++) {
+            $( '#TheirBoard #'+startCoordAcross+'_'+i  ).css("background-color", "#A3CEDC");
+        }
+    } else {
+        for (i = startCoordAcross; i <= endCoordAcross; i++) {
+            $( '#TheirBoard #'+i+'_'+startCoordDown  ).css("background-color", "#A3CEDC");
         }
     }
  }
