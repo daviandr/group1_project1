@@ -7,7 +7,7 @@ package edu.oregonstate.cs361.battleship;
 
 import java.lang.reflect.Field;
 import com.google.gson.Gson;
-import spark.Request;
+import spark.Request;q
 import static spark.Spark.get;
 import static spark.Spark.post;
 import static spark.Spark.staticFiles;
@@ -66,7 +66,7 @@ public class Main {
             send update to newModel to update the game board, showing damaged ship
         else the hit lands in the water, return message saying they missed
             send update to newModel to update board, showing missed spot
-        
+
          */
         return null;
     }
