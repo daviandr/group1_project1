@@ -5,6 +5,8 @@
 */
 package edu.oregonstate.cs361.battleship;
 
+import java.util.ArrayList;
+
 /* BattleshipModel class */
 public class BattleshipModel {
     public Ship aircraftCarrier;
@@ -17,10 +19,10 @@ public class BattleshipModel {
     public Ship computer_cruiser;
     public Ship computer_destroyer;
     public Ship computer_submarine;
-    public Coord[] playerHits;
-    public Coord[] playerMisses;
-    public Coord[] computerHits;
-    public Coord[] computerMisses;
+    public ArrayList<Coord> playerHits;
+    public ArrayList<Coord> playerMisses;
+    public ArrayList<Coord> computerHits;
+    public ArrayList<Coord> computerMisses;
 
     /*
     ** Function Name: BattleshipModel (constructor)
@@ -46,8 +48,8 @@ public class BattleshipModel {
         cruiser = new Ship("Cruiser", 3);
         destroyer = new Ship("Destroyer", 2);
         submarine = new Ship("Submarine", 2);
-        playerHits = new Coord[16];
-        playerMisses = new Coord[84];
+        playerHits = new ArrayList<Coord>();
+        playerMisses = new ArrayList<Coord>();
     }
 
     /*
@@ -81,9 +83,22 @@ public class BattleshipModel {
     ** Return: None
     */
     private void InitLists(){
-        playerHits = new Coord[16];
-        playerMisses = new Coord[84];
-        computerHits = new Coord[16];
-        computerMisses = new Coord[84];
+        playerHits = new ArrayList<Coord>();
+        playerMisses = new ArrayList<Coord>();
+        computerHits = new ArrayList<Coord>();
+        computerMisses = new ArrayList<Coord>();
     }
+
+    /*
+    ** Function Name: generateCoordinates
+    ** Parameters: None
+    ** Description: Generates random coordinates for the computerHits
+    **              ships
+    ** Return: randomCoordinates
+    */
+    private Coord[] generateCoordinates(){
+        // TODO: Generate random coordinates
+        return null;
+    }
+
 }
