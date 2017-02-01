@@ -30,7 +30,12 @@ public class Main {
 
     //This function should return a new model
     private static String newModel() {
-        return null;
+        BattleshipModel bsModel = new BattleshipModel();
+        Gson gson = new Gson();
+
+        // Convert from Java object to JSON
+        String newModel = gson.toJson(bsModel, BattleshipModel.class);
+        return newModel;
     }
 
     /*
