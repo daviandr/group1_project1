@@ -47,7 +47,6 @@ public class Main {
         BattleshipModel deserializedModel = gson.fromJson(req.body(), BattleshipModel.class);
 
         return deserializedModel;
-        
     }
 
     //This controller should take a json object from the front end, and place the ship as requested, and then return the object.
@@ -84,7 +83,4 @@ public class Main {
     }
 
 }
-<<<<<<< HEAD
-=======
 //comment
->>>>>>> 3123300377f8ef91bfd27ed5db10541a28eca6f0
