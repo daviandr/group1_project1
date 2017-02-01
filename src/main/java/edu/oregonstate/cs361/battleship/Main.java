@@ -7,7 +7,7 @@ package edu.oregonstate.cs361.battleship;
 
 import java.lang.reflect.Field;
 import com.google.gson.Gson;
-import spark.Request;q
+import spark.Request;
 import static spark.Spark.get;
 import static spark.Spark.post;
 import static spark.Spark.staticFiles;
@@ -40,10 +40,10 @@ public class Main {
 
     /*
     ** Function: private static BattleshipModel getModelFromReq
-    * Parameters: Request req - the HTML request object
-    * Description: This function should accept an HTTP request and deseralize it into an actual Java object.
-    * Return: Deserialized battleshipModel object sent by client
-     */
+    ** Parameters: Request req - the HTML request object
+    ** Description: This function should accept an HTTP request and deseralize it into an actual Java object.
+    ** Return: Deserialized battleshipModel object sent by client
+    */
     private static BattleshipModel getModelFromReq(Request req){
         Gson gson = new Gson();
 
@@ -53,6 +53,16 @@ public class Main {
         return deserializedModel;
     }
 
+    /*
+    ** Function: private static void placeShipAt
+    ** Parameters: int length - length of chosen ship
+    **             int xCoord - starting x coordinate of ship
+    **             int yCoord - starting y coordinate of ship
+    **             boolean direction - the orientation of the ship
+    **             Ship userShip - Ship object that is to be changed
+    ** Description: This function manipulates the game model based on the parameters in the url]
+    ** Return: None
+    */
     private static void placeShipAt(int length, int xCoord, int yCoord, boolean direction, Ship userShip)
     {
         if(direction)
