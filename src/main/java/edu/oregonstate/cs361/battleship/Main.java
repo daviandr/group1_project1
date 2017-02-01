@@ -33,9 +33,20 @@ public class Main {
         return null;
     }
 
-    //This function should accept an HTTP request and deseralize it into an actual Java object.
+
+    /*
+    ** Function: private static BattleshipModel getModelFromReq
+    * Parameters: Request req - the HTML request object
+    * Description: This function should accept an HTTP request and deseralize it into an actual Java object.
+    * Return: Deserialized battleshipModel object sent by client
+     */
     private static BattleshipModel getModelFromReq(Request req){
-        return null;
+        Gson gson = new Gson();
+
+        // Convert from JSON to java object
+        BattleshipModel deserializedModel = gson.fromJson(req.body(), BattleshipModel.class);
+
+        return deserializedModel;
     }
 
     private static void placeShipAt(int length, int xCoord, int yCoord, boolean direction, Ship userShip)
@@ -111,4 +122,3 @@ public class Main {
         return null;
     }
 }
-//comment
