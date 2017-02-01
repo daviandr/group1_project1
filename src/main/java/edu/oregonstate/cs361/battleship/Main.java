@@ -33,7 +33,6 @@ public class Main {
         return null;
     }
 
-
     /*
     ** Function: private static BattleshipModel getModelFromReq
     * Parameters: Request req - the HTML request object
