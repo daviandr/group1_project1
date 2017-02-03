@@ -19,7 +19,7 @@ public class BattleshipModel {
     public Ship computer_cruiser;
     public Ship computer_destroyer;
     public Ship computer_submarine;
-    public ArrayList<Coord> playerHits;
+    public ArrayList<Coord> playerHits;         //store coordinates from user hits here. i.e., "user hit at [2][2], [2][3]..."
     public ArrayList<Coord> playerMisses;
     public ArrayList<Coord> computerHits;
     public ArrayList<Coord> computerMisses;
