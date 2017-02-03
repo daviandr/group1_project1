@@ -67,8 +67,8 @@ public class Main {
             send update to newModel to update the game board, showing damaged ship
         else the hit lands in the water, return message saying they missed
             send update to newModel to update board, showing missed spot
-        
          */
+
         BattleshipModel recentModel = getModelFromReq(req);
 
         int row = Integer.parseInt(req.params("row"));                    //row of fire
@@ -91,18 +91,16 @@ public class Main {
 
                 for(int j = startCoordDown; j <= endCoordDown; j++){            //check y coord(col) against all y coord (col) of aircraftCarrier
                     if(col == j){                                               //if match, then that is a hit on the ship. Update playerHit array
-                        recentModel.playerHits.add(1);                          //append 2 elements to arrayList
-                        recentModel.playerHits.add(coord.Across, recentModel.playerHits.size() - 1);  //add x coord (row) to the playerHits arrayList to the last element
+                        recentModel.playerHits.add(coord);                      //append 1 elements to arrayList
+                        //add x coord (row) to the playerHits arrayList to the last element
 
                         Gson gson = new Gson();                                              //return updated JSON file
                         String JsonModel = gson.toJson(recentModel, BattleshipModel.class);
                         System.out.println(JsonModel);
                         return JsonModel;
-
                     }
                     else{                                                       //if no match, it is a miss. Update playerMiss
-                        recentModel.playerMisses.add(1);                        //append 2 elements to arrayList
-                        recentModel.playerMisses.add(coord, recentModel.playerMisses.size() - 1);
+                        recentModel.playerMisses.add(coord);                        //append 1 elements to arrayList
 
                         Gson gson = new Gson();                                              //return updated JSON file
                         String JsonModel = gson.toJson(recentModel, BattleshipModel.class);
@@ -113,8 +111,7 @@ public class Main {
                 }
             }
             else{                                                               //if no match, it is a miss. Move on to check next ship
-                recentModel.playerMisses.add(1);                                //append  element to arrayList
-                recentModel.playerMisses.add(coord, recentModel.playerMisses.size() - 1);
+                recentModel.playerMisses.add(coord);                                //append  element to arrayList
 
                 Gson gson = new Gson();                                              //return updated JSON file
                 String JsonModel = gson.toJson(recentModel, BattleshipModel.class);
@@ -134,8 +131,7 @@ public class Main {
 
                 for(int j = startCoordDown; j <= endCoordDown; j++){    //check y coord(col) against all y coord (col) of battleship
                     if(col == j){                                       //if match, then that is a hit on the ship
-                        recentModel.playerHits.add(1);                  //append 1 element to arrayList
-                        recentModel.playerHits.add(coord, recentModel.playerHits.size() - 1);
+                        recentModel.playerHits.add(coord);                  //append 1 element to arrayList
 
                         Gson gson = new Gson();                         //return updated JSON file
                         String JsonModel = gson.toJson(recentModel, BattleshipModel.class);
@@ -143,8 +139,7 @@ public class Main {
                         return JsonModel;
                     }
                     else{                                                 //if no match, it is a miss. Move on to check next ship
-                        recentModel.playerMisses.add(1);                  //append 2 elements to arrayList
-                        recentModel.playerMisses.add(coord, recentModel.playerMisses.size() - 1);
+                        recentModel.playerMisses.add(coord);                  //append 1 elements to arrayList
 
                         Gson gson = new Gson();                                              //return updated JSON file
                         String JsonModel = gson.toJson(recentModel, BattleshipModel.class);
@@ -154,8 +149,7 @@ public class Main {
                 }
             }
             else{                                                       //if no match, it is a miss. Move on to check next ship
-                recentModel.playerMisses.add(1);                        //append 2 elements to arrayList
-                recentModel.playerMisses.add(coord, recentModel.playerMisses.size() - 1);
+                recentModel.playerMisses.add(coord);                        //append 1 elements to arrayList
 
                 Gson gson = new Gson();                                              //return updated JSON file
                 String JsonModel = gson.toJson(recentModel, BattleshipModel.class);
@@ -174,8 +168,7 @@ public class Main {
 
                 for(int j = startCoordDown; j <= endCoordDown; j++){    //check y coord(col) against all y coord (col) of cruiser
                     if(col == j){                                       //if match, then that is a hit on the ship
-                        recentModel.playerHits.add(1);                  //append 2 elements to arrayList
-                        recentModel.playerHits.add(coord, recentModel.playerHits.size() - 1);
+                        recentModel.playerHits.add(coord);                  //append 1 elements to arrayList
 
                         Gson gson = new Gson();                             //return updated JSON file
                         String JsonModel = gson.toJson(recentModel, BattleshipModel.class);
@@ -183,8 +176,7 @@ public class Main {
                         return JsonModel;
                     }
                     else{                                               //if no match, it is a miss. Move on to check next ship
-                        recentModel.playerMisses.add(1);                //append 2 elements to arrayList
-                        recentModel.playerMisses.add(coord, recentModel.playerMisses.size() - 1);
+                        recentModel.playerMisses.add(coord);                //append 1 elements to arrayList
 
                         Gson gson = new Gson();                                              //return updated JSON file
                         String JsonModel = gson.toJson(recentModel, BattleshipModel.class);
@@ -194,8 +186,7 @@ public class Main {
                 }
             }
             else{                                                       //if no match, it is a miss. Move on to check next ship
-                recentModel.playerMisses.add(1);                        //append 2 elements to arrayList
-                recentModel.playerMisses.add(coord, recentModel.playerMisses.size() - 1);
+                recentModel.playerMisses.add(coord);                        //append 1 elements to arrayList
 
                 Gson gson = new Gson();                                              //return updated JSON file
                 String JsonModel = gson.toJson(recentModel, BattleshipModel.class);
@@ -215,8 +206,7 @@ public class Main {
 
                 for(int j = startCoordDown; j <= endCoordDown; j++){    //check y coord(col) against all y coord (col) of destroyer
                     if(col == j){                                       //if match, then that is a hit on the ship
-                        recentModel.playerHits.add(1);                  //append 2 elements to arrayList
-                        recentModel.playerHits.add(coord, recentModel.playerHits.size() - 1);
+                        recentModel.playerHits.add(coord);                  //append 1 elements to arrayList
 
                         Gson gson = new Gson();                          //return updated JSON file
                         String JsonModel = gson.toJson(recentModel, BattleshipModel.class);
@@ -224,8 +214,7 @@ public class Main {
                         return JsonModel;
                     }
                     else{                                                //if no match, it is a miss. Move on to check next ship
-                        recentModel.playerMisses.add(1);                 //append 2 elements to arrayList
-                        recentModel.playerMisses.add(coord, recentModel.playerMisses.size() - 1);
+                        recentModel.playerMisses.add(coord);                 //append 1 elements to arrayList
 
                         Gson gson = new Gson();                                              //return updated JSON file
                         String JsonModel = gson.toJson(recentModel, BattleshipModel.class);
@@ -235,8 +224,7 @@ public class Main {
                 }
             }
             else{                                                        //if no match, it is a miss. Move on to check next ship
-                recentModel.playerMisses.add(1);                        //append 2 elements to arrayList
-                recentModel.playerMisses.add(coord, recentModel.playerMisses.size() - 1);
+                recentModel.playerMisses.add(coord);                        //append 1 elements to arrayList
 
                 Gson gson = new Gson();                                              //return updated JSON file
                 String JsonModel = gson.toJson(recentModel, BattleshipModel.class);
@@ -256,8 +244,7 @@ public class Main {
 
                 for(int j = startCoordDown; j <= endCoordDown; j++){    //check y coord(col) against all y coord (col) of submarine
                     if(col == j){                                       //if match, then that is a hit on the ship
-                        recentModel.playerHits.add(1);                  //append 2 elements to arrayList
-                        recentModel.playerHits.add(coord, recentModel.playerHits.size() - 1);
+                        recentModel.playerHits.add(coord);                  //append 1 elements to arrayList
 
                         Gson gson = new Gson();                          //return updated JSON file
                         String JsonModel = gson.toJson(recentModel, BattleshipModel.class);
@@ -265,8 +252,7 @@ public class Main {
                         return JsonModel;
                     }
                     else{                                                //if no match, it is a miss. Move on to check next ship
-                        recentModel.playerMisses.add(1);                 //append 2 elements to arrayList
-                        recentModel.playerMisses.add(coord, recentModel.playerMisses.size() - 1);
+                        recentModel.playerMisses.add(coord);                 //append 1 elements to arrayList
 
                         Gson gson = new Gson();                                              //return updated JSON file
                         String JsonModel = gson.toJson(recentModel, BattleshipModel.class);
@@ -276,8 +262,7 @@ public class Main {
                 }
             }
             else{                                                        //if no match, it is a miss. Move on to check next ship
-                recentModel.playerMisses.add(1);                         //append 2 elements to arrayList
-                recentModel.playerMisses.add(coord, recentModel.playerMisses.size() - 1);
+                recentModel.playerMisses.add(coord);                         //append 1 elements to arrayList
 
                 Gson gson = new Gson();                                              //return updated JSON file
                 String JsonModel = gson.toJson(recentModel, BattleshipModel.class);
